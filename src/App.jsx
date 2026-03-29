@@ -1,9 +1,14 @@
 import './App.css'
+import NavBar from './Components/1.NavBar/NavBar'
+import Banner from './Components/2.Banner/Banner'
+import Footer from './Components/7.Footer/Footer'
 
 function App() {
   return (
     <>
-      <h1 className='font-bold text-3xl'>React on the go</h1>
+      <NavBar></NavBar>
+      <Banner></Banner>
+      <Footer></Footer>
     </>
   )
 }

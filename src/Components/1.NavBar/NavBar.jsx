@@ -32,7 +32,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-1">
-                    <div className='hidden md:inline-block'>
+                    <div className='hidden md:inline-block hover:cursor-pointer'>
                     <span className='badge badge-sm'>0</span>
                     <FiShoppingCart></FiShoppingCart>
                     </div>

@@ -18,8 +18,7 @@ const Banner = () => {
                         </div>
                         <h1 className="text-5xl md:text-7xl font-bold md:leading-20">Supercharge Your <br className='hidden md:block' />Digital Workflow</h1>
                         <p className="py-6 text-[#627382] leading-5">
-                            Access premium AI tools, design assets, templates, and productivity <br className='hidden md:flex' />
-                            software—all in one place. Start creating faster today. <br className='hidden md:flex' />
+                            Access premium AI tools, design assets, templates, and productivity software <br />—all in one place. Start creating faster today. <br />
                             Explore Products
                         </p>
                         <div className='flex gap-2'>

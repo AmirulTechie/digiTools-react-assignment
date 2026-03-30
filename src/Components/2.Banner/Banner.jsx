@@ -5,7 +5,7 @@ import Ping from '../../assets/ping.png'
 
 const Banner = () => {
     return (
-            <div className="min-h-screen mx-auto max-w-8/12 md:mt-50 mb-20 md:mb-0">
+            <div className=" mx-auto max-w-8/12 md:mt-50 mb-20 md:mb-0">
             <div className="flex flex-col justify-center items-center md:flex-row-reverse gap-10 text-left">
                     <img
                     src={BannerImg}

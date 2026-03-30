@@ -4,14 +4,20 @@ import Banner from './Components/2.Banner/Banner'
 import Stats from './Components/3.Stats/Stats'
 import ToggleBtn from './Components/4.ToggleSection/Buttons/ToggleBtn'
 import Footer from './Components/7.Footer/Footer'
+const getProductData = async()=>{
+  const res = await fetch('/data.json')
+  return res.json()
+}
+const productPromise = getProductData()
 
 function App() {
+
   return (
     <>
       <NavBar></NavBar>
       <Banner></Banner>
       <Stats></Stats>
-      <ToggleBtn></ToggleBtn>
+      <ToggleBtn productPromise={productPromise}></ToggleBtn>
       <Footer></Footer>
     </>
   )

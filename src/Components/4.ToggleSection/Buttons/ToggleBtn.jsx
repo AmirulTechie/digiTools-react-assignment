@@ -1,5 +1,5 @@
-import React, { use } from 'react';
-import ProductCard from '../ProductList/ProductCard/ProductCard';
+import React, { Suspense, use } from 'react';
+import ProductCard from '../ProductList/Products';
 import CartItem from '../Cart/CartItem/CartItem';
 
 const ToggleBtn = ({ productPromise }) => {
@@ -11,7 +11,7 @@ const ToggleBtn = ({ productPromise }) => {
             <p className='text-[#627382] text-center'>
                 Choose from our curated collection of premium digital products designed to <br className='hidden md:block' /> boost your productivity and creativity.
             </p>
-            <div>
+            <div className='mb-20'>
                 <button className='btn rounded-3xl bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white'>Products</button>
                 <button className='btn rounded-3xl'>Cart (2)</button>
             </div>

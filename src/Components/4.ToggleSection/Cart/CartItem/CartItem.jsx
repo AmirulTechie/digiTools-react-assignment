@@ -2,8 +2,8 @@ import React from 'react';
 
 const CartItem = () => {
     return (
-        <div>
-            
+        <div className='mt-10'>
+           
         </div>
     );
 };

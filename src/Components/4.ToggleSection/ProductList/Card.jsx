@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; //
+
 
 const Card = ({product}) => {
     const [isAdded, setAdded] = useState(false);
     const handleBuyNow = () =>{
         setAdded(true);
+        toast.info("Item added to cart")
     }
     return (
         <div className="card w-96 bg-base-100 shadow-sm">

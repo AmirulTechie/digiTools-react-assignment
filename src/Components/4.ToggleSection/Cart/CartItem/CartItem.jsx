@@ -1,9 +1,48 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
-const CartItem = () => {
+const CartItem = ({carts, setCarts}) => {
+    const handleCheckOut = () =>{
+        setCarts([])
+        toast.success('Payment Successfull!')
+    }
+    const totalPrice = carts.reduce((sum, item)=> sum + item.price, 0)
+    console.log(totalPrice)
     return (
-        <div className='mt-10'>
-           
+        <div className='border border-gray-200 text-left rounded-xl p-5 w-'>
+            <div>
+           <h3 className='text-xl font-bold'>Your Cart</h3>
+            </div>
+            {
+                carts.length===0 ? <p>cart is empty</p> :
+                <>
+                        <div className='flex flex-col gap-5 w-full mt-5'>
+                            {
+                                carts.map(item => <div key={item.id} className='bg-gray-200 rounded-xl p-2'>
+                                    <div className='flex gap-5'>
+                                        <div className='w-13 h-13 border border-gray-200 rounded-full flex justify-center items-center bg-white'><img src={item.icon} alt="" height={32} />
+                                        </div>
+                                        <div className='flex justify-between w-70 md:w-2xl lg:w-4xl items-center'>
+                                            <div className='flex flex-col text-left'>
+                                                <h5 className='font-bold'>{item.name}</h5>
+                                                <p className='opacity-50'>${item.price}</p>
+                                            </div>
+                                            <div className=''>
+                                                <button className='text-red-400 btn btn-ghost'>Remove</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                )
+                            }
+                        </div>
+                        <div className='flex justify-between mt-7 mb-3'>
+                            <p className='opacity-50'>Total:</p>
+                            <p className='font-bold text-xl'>${totalPrice}</p>
+                        </div>
+                        <button onClick={() => handleCheckOut()} className='btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white w-full rounded-3xl'>Proceed to Checkout</button>
+                </>
+            }
         </div>
     );
 };

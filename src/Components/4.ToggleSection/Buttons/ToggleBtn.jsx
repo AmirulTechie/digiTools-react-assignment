@@ -3,11 +3,11 @@ import ProductCard from '../ProductList/Products';
 import CartItem from '../Cart/CartItem/CartItem';
 
 
-const ToggleBtn = ({ productPromise }) => {
+const ToggleBtn = ({ productPromise, carts, setCarts}) => {
     const productData = use(productPromise);
     const products = productData;
     const [activeTab, setActiveTab] = useState("product");
-    console.log(activeTab);
+    
     return (
         <div className='flex flex-col justify-center items-center space-y-6 mt-40'>
             <h2 className='text-5xl font-bold text-center'>Premium Digital Tools</h2>
@@ -16,11 +16,11 @@ const ToggleBtn = ({ productPromise }) => {
             </p>
             <div className='mb-20'>
                 <button onClick={() => setActiveTab('product')} className={`btn rounded-3xl ${activeTab === 'product' ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white " : ""}`}>Products</button>
-                <button onClick={() => setActiveTab("cart")} className={`btn rounded-3xl ${activeTab === 'cart' ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : ""}`}>Cart (2)</button>
+                <button onClick={() => setActiveTab("cart")} className={`btn rounded-3xl ${activeTab === 'cart' ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : ""}`}>Cart ({carts.length})</button>
             </div>
             <div>
-                {activeTab === 'cart' ? <CartItem></CartItem> :
-                <ProductCard products={products}></ProductCard>}
+                {activeTab === 'cart' ? <CartItem carts={carts} setCarts={setCarts}></CartItem> :
+                <ProductCard products={products} carts={carts} setCarts={setCarts}></ProductCard>}
             </div>
         </div>
     );

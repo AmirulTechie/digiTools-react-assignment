@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from '../../assets/DigiTools.png'
 import { FiShoppingCart } from 'react-icons/fi';
-const NavBar = () => {
+const NavBar = ({carts}) => {
     return (
         <>
-            <div className="navbar bg-base-100 shadow-sm">
+            <div className="navbar bg-base-100 shadow-sm mb-20">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,12 +32,12 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-1">
-                    <div className='hidden md:inline-block hover:cursor-pointer'>
-                    <span className='badge badge-sm'>0</span>
+                    <div className='hover:cursor-pointer'>
+                    <span className='badge badge-sm'>{carts.length}</span>
                     <FiShoppingCart></FiShoppingCart>
                     </div>
                     <a className="btn btn-ghost hidden md:flex">Login</a>
-                    <a href="#" className='btn btn-ghost rounded-3xl bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white'>Get Started</a>
+                    <a href="#" className='btn btn-ghost hidden md:flex rounded-3xl bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white'>Get Started</a>
                 </div>
             </div>
         </>

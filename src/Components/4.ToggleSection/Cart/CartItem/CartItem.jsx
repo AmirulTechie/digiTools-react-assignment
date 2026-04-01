@@ -20,11 +20,11 @@ const CartItem = ({carts, setCarts}) => {
             <div>
                 <h3 className='text-xl font-bold'>Your Cart</h3>
             </div>
-        <div className='border border-gray-200 text-left rounded-xl px-2'>
+        <div className='mb-20 border border-gray-200 text-left rounded-xl px-2'>
             
             {
                 carts.length===0 ?
-                <div className='flex flex-col items-center justify-center px-5 text-center'>
+                <div className='flex flex-col items-center justify-center p-5 text-center'>
                 <img className='h-80' src={EmptyCart} alt="" />
                 <p className='text-3xl font-bold'>Your cart is empty!</p> 
                 </div>
@@ -54,7 +54,7 @@ const CartItem = ({carts, setCarts}) => {
                             <p className='opacity-50'>Total:</p>
                             <p className='font-bold text-xl'>${totalPrice}</p>
                         </div>
-                        <button onClick={() => handleCheckOut()} className='btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white w-full rounded-3xl'>Proceed to Checkout</button>
+                        <button onClick={() => handleCheckOut()} className='btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white w-full rounded-3xl mb-5'>Proceed to Checkout</button>
                 </>
             }
         </div>

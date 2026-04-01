@@ -48,7 +48,7 @@
     {
         "id": 4,
         "name": "Automation Toolkit",
-        "description": "Automate repetitive tasks and streamline your workflow with powerful tools.",
+        "description": "Automate repetitive tasks and streamline your workflow with this.",
         "price": 79,
         "period": "monthly",
         "tag": "Popular",
@@ -63,7 +63,7 @@
     {
         "id": 5,
         "name": "Resume Builder Pro",
-        "description": "Create professional resumes and cover letters that land interviews.",
+        "description": "Create professional resumes and cover letters",
         "price": 15,
         "period": "one-time",
         "tag": "New",
@@ -78,7 +78,7 @@
     {
         "id": 6,
         "name": "Social Media Content Kit",
-        "description": "Complete toolkit for creating engaging social media content across all platforms.",
+        "description": "Complete toolkit for creating engaging social media content",
         "price": 39,
         "period": "monthly",
         "tag": "Best Seller",

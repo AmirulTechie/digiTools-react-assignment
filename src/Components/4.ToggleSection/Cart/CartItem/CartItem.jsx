@@ -1,22 +1,36 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import EmptyCart from '../../../../assets/EmptyCart.png'
 
 const CartItem = ({carts, setCarts}) => {
     const handleCheckOut = () =>{
         setCarts([])
-        toast.success('Payment Successfull!')
+        toast.success(`Your payment of $${totalPrice} was successful!`)
     }
+    const handleRemove = (item) =>{
+       const fitleredArray = carts.filter(c=>c.id !== item.id);
+       setCarts(fitleredArray)
+       toast.error("Item removed from cart")
+    }
+
     const totalPrice = carts.reduce((sum, item)=> sum + item.price, 0)
-    console.log(totalPrice)
+    
     return (
-        <div className='border border-gray-200 text-left rounded-xl p-5 w-'>
+        <>
             <div>
-           <h3 className='text-xl font-bold'>Your Cart</h3>
+                <h3 className='text-xl font-bold'>Your Cart</h3>
             </div>
+        <div className='border border-gray-200 text-left rounded-xl px-2'>
+            
             {
-                carts.length===0 ? <p>cart is empty</p> :
+                carts.length===0 ?
+                <div className='flex flex-col items-center justify-center px-5 text-center'>
+                <img className='h-80' src={EmptyCart} alt="" />
+                <p className='text-3xl font-bold'>Your cart is empty!</p> 
+                </div>
+                :
                 <>
-                        <div className='flex flex-col gap-5 w-full mt-5'>
+                        <div className='flex flex-col gap-5 mt-5'>
                             {
                                 carts.map(item => <div key={item.id} className='bg-gray-200 rounded-xl p-2'>
                                     <div className='flex gap-5'>
@@ -28,7 +42,7 @@ const CartItem = ({carts, setCarts}) => {
                                                 <p className='opacity-50'>${item.price}</p>
                                             </div>
                                             <div className=''>
-                                                <button className='text-red-400 btn btn-ghost'>Remove</button>
+                                                <button  onClick={()=>handleRemove(item)} className='text-red-400 btn btn-ghost'>Remove</button>
                                             </div>
                                         </div>
                                     </div>
@@ -44,6 +58,7 @@ const CartItem = ({carts, setCarts}) => {
                 </>
             }
         </div>
+        </>
     );
 };
 

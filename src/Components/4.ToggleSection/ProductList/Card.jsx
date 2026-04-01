@@ -10,7 +10,7 @@ const Card = ({product, carts, setCarts}) => {
         setCarts([...carts, product]);
     }
     return (
-        <div className="card w-96 bg-base-100 shadow-sm">
+        <div className="card bg-base-100 shadow-sm">
             <div className="card-body">
                 <div
                     className={`badge badge-sm ${product.tagType === 'best' ? 'badge-warning'
@@ -18,7 +18,7 @@ const Card = ({product, carts, setCarts}) => {
                                 'badge-primary'
                                 : product.tagType === 'new' ?
                                     'badge-success'
-                                    : ""}  mb-2`}
+                                    : ""}  mb-2 ml-auto`}
                 >
                     {product.tag}
                 </div>

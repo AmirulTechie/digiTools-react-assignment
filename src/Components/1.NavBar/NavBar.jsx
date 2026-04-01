@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from '../../assets/DigiTools.png'
 import { FiShoppingCart } from 'react-icons/fi';
-const NavBar = ({carts}) => {
+const NavBar = ({ carts}) => {
     return (
         <>
-            <div className="navbar bg-base-100 shadow-sm mb-20">
+            <div className="navbar bg-base-100 shadow-sm mb-20 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -69,7 +69,7 @@ const CheckIcon = ({ white }) => (
 
 const Pricing = () => {
     return (
-        <div className="flex flex-col items-center justify-center py-20 px-4">
+        <div className="flex flex-col items-center justify-center py-20 px-4 mb-20">
             <h2 className="font-bold text-4xl md:text-5xl text-gray-900 text-center">
                 Simple, Transparent Pricing
             </h2>
@@ -89,7 +89,7 @@ const Pricing = () => {
                     >
                         {plan.popular && (
                             <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                                <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-4 py-1 rounded-full shadow">
+                                <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full shadow">
                                     Most Popular
                                 </span>
                             </div>
